@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ServerInterface">
+      <HintPath>StrongholdKingdoms\bin\Debug\ServerInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomSinks">
+      <HintPath>StrongholdKingdoms\bin\Debug\CustomSinks.dll</HintPath>
+    </Reference>
+    <Reference Include="CookComputing.XmlRpcV2">
+      <HintPath>StrongholdKingdoms\bin\Debug\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonTypes">
+      <HintPath>StrongholdKingdoms\bin\Debug\CommonTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="GameServerClientStandalone.cs" />
+  </ItemGroup>
+
+</Project>
