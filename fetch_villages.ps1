@@ -9,9 +9,11 @@ Write-Host ""
 Write-Host "📂 Loading .env file..." -ForegroundColor Yellow
 if (Test-Path ".env") {
     Get-Content .env | ForEach-Object {
-        if ($_ -match '^\s*([^#][^=]*?)\s*=\s*(.*)$') {
-            $name = $matches[1].Trim()
-            $value = $matches[2].Trim()
+        $line = $_.Trim()
+        if ($line -and !$line.StartsWith('#') -and $line.Contains('=')) {
+            $parts = $line.Split('=', 2)
+            $name = $parts[0].Trim()
+            $value = $parts[1].Trim()
             [Environment]::SetEnvironmentVariable($name, $value, "Process")
             Write-Host "   ✓ Set $name" -ForegroundColor Green
         }
