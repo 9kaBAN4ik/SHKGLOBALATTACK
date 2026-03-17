@@ -1,0 +1,11 @@
+C:\GlobalAttackSHK\SHKGameConnector\obj\Debug\SHKGameConnector.csproj.AssemblyReference.cache
+C:\GlobalAttackSHK\SHKGameConnector\obj\Debug\SHKGameConnector.csproj.CoreCompileInputs.cache
+C:\GlobalAttackSHK\SHKGameConnector\bin\Debug\SHKGameConnector.exe.config
+C:\GlobalAttackSHK\SHKGameConnector\bin\Debug\SHKGameConnector.exe
+C:\GlobalAttackSHK\SHKGameConnector\bin\Debug\SHKGameConnector.pdb
+C:\GlobalAttackSHK\SHKGameConnector\bin\Debug\CommonTypes.dll
+C:\GlobalAttackSHK\SHKGameConnector\bin\Debug\CustomSinks.dll
+C:\GlobalAttackSHK\SHKGameConnector\bin\Debug\ServerInterface.dll
+C:\GlobalAttackSHK\SHKGameConnector\obj\Debug\SHKGameC.B2E13494.Up2Date
+C:\GlobalAttackSHK\SHKGameConnector\obj\Debug\SHKGameConnector.exe
+C:\GlobalAttackSHK\SHKGameConnector\obj\Debug\SHKGameConnector.pdb

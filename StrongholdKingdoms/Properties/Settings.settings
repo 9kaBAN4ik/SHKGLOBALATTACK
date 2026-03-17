@@ -1,0 +1,129 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile CurrentProfile="(Default)" GeneratedClassNamespace="Properties" GeneratedClassName="Settings" xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StopTradeOnCardsExpiry" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowPopupOnTradeExpiry" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="StopScoutOnCardsExpiry" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowPopupOnScoutsExpiry" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FormWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">580</Value>
+    </Setting>
+    <Setting Name="FormHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">742</Value>
+    </Setting>
+    <Setting Name="TradeSlider1Distance" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">114</Value>
+    </Setting>
+    <Setting Name="TradeSlider2Distance" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">343</Value>
+    </Setting>
+    <Setting Name="RepairOnAIAttacks" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UserContactEmail" Type="System.String" Scope="User">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="RefreshEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FullRefreshEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LoadMonksSettings" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="StartMonks" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BotWorkPeriod" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">45</Value>
+    </Setting>
+    <Setting Name="BotSleepPeriod" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="MerchantsTradeLimit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="MerchantsExchangeLimit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="MonksToKeep" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="VassalTroopsMinimum" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="FeedShouldNotify" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="RandomWorkPeriodsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DiscordWebhook" Type="System.String" Scope="User">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="TelegramBotToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="TelegramChatID" Type="System.String" Scope="User">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="StayOnTop" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ScoutingIgnoreType" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TelegramUseProxy" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ProxyAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="ProxyPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ProxyUseCredential" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ProxyUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="ProxyPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="TabsOrder" Type="System.String" Scope="User">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="Language" Type="System.String" Scope="User">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="MinimumScouts" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="DoScoutsNeedFreeSpace" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MaxLogsToKeep" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="AutoIDExtraDelay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="LastLoadedAdvancedLogin" Type="System.String" Scope="User">
+      <Value Profile="(Default)"></Value>
+    </Setting>
+    <Setting Name="ShowAdvancedLoginOptions" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

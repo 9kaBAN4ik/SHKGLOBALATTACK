@@ -1,0 +1,7 @@
+C:\GlobalAttackSHK\StrongholdKingdoms\bin\Debug\SimpleGameClient.exe
+C:\GlobalAttackSHK\StrongholdKingdoms\bin\Debug\SimpleGameClient.pdb
+C:\GlobalAttackSHK\SimpleGameClient\obj\Debug\SimpleGameClient.csproj.AssemblyReference.cache
+C:\GlobalAttackSHK\SimpleGameClient\obj\Debug\SimpleGameClient.csproj.CoreCompileInputs.cache
+C:\GlobalAttackSHK\SimpleGameClient\obj\Debug\SimpleGa.0E99C621.Up2Date
+C:\GlobalAttackSHK\SimpleGameClient\obj\Debug\SimpleGameClient.exe
+C:\GlobalAttackSHK\SimpleGameClient\obj\Debug\SimpleGameClient.pdb

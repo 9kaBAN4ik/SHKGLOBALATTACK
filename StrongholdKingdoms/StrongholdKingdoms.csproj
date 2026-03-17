@@ -1,0 +1,1479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{EBB3A258-C67B-4FF0-9441-4B64FA9B7150}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StrongholdKingdoms</RootNamespace>
+    <AssemblyName>StrongholdKingdoms</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>Kingdoms.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonTypes">
+      <HintPath>..\..\..\..\..\..\ProgramData\Firefly Studios\Stronghold Kingdoms\2.0.43.10\CommonTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomSinks">
+      <HintPath>..\..\..\..\..\..\ProgramData\Firefly Studios\Stronghold Kingdoms\2.0.43.10\CustomSinks.dll</HintPath>
+    </Reference>
+    <Reference Include="DataClient">
+      <HintPath>..\..\..\..\..\..\ProgramData\Firefly Studios\Stronghold Kingdoms\2.0.43.10\DataClient.dll</HintPath>
+    </Reference>
+    <Reference Include="DataInterface">
+      <HintPath>..\..\..\..\..\..\ProgramData\Firefly Studios\Stronghold Kingdoms\2.0.43.10\DataInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="DXGraphics">
+      <HintPath>..\..\..\..\..\..\ProgramData\Firefly Studios\Stronghold Kingdoms\2.0.43.10\DXGraphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Geckofx-Core">
+      <HintPath>..\..\..\..\..\..\ProgramData\Firefly Studios\Stronghold Kingdoms\2.0.43.10\Geckofx-Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Geckofx-Winforms">
+      <HintPath>..\..\..\..\..\..\ProgramData\Firefly Studios\Stronghold Kingdoms\2.0.43.10\Geckofx-Winforms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="ServerInterface">
+      <HintPath>..\..\..\..\..\..\ProgramData\Firefly Studios\Stronghold Kingdoms\2.0.43.10\ServerInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX">
+      <HintPath>..\..\..\..\..\..\ProgramData\Firefly Studios\Stronghold Kingdoms\2.0.43.10\SlimDX.dll</HintPath>
+    </Reference>
+    <Reference Include="Stronghold.ShieldClient">
+      <HintPath>..\..\..\..\..\..\ProgramData\Firefly Studios\Stronghold Kingdoms\2.0.43.10\Stronghold.ShieldClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Stronghold.WebService">
+      <HintPath>..\..\..\..\..\..\ProgramData\Firefly Studios\Stronghold Kingdoms\2.0.43.10\Stronghold.WebService.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ARGBColors.cs" />
+    <Compile Include="PrivateImplementationDetailsHelper.cs" />
+    <Compile Include="Dotnetrix_Samples\SelectedTabPageChangeEventHandler.cs" />
+    <Compile Include="Dotnetrix_Samples\TabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dotnetrix_Samples\TabPageChangeEventArgs.cs" />
+    <Compile Include="Kingdoms\AboutPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AboutPopup.Designer.cs">
+      <DependentUpon>AboutPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\AchievementPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AchievementPopup.Designer.cs">
+      <DependentUpon>AchievementPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\AchievementReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AdminInfoPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AdminInfoPopup.Designer.cs">
+      <DependentUpon>AdminInfoPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\AdminIngameMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AdminIngameMessage.Designer.cs">
+      <DependentUpon>AdminIngameMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\AdminStatsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AdminStatsPopup.Designer.cs">
+      <DependentUpon>AdminStatsPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\AdvancedCastleOptionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AdvancedCastleOptionsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AdvancedCastleOptionsPopup.Designer.cs">
+      <DependentUpon>AdvancedCastleOptionsPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\AdvicePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AdvicePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AdvicePopup.Designer.cs">
+      <DependentUpon>AdvicePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\AeriaEventArgs.cs" />
+    <Compile Include="Kingdoms\AeriaEventHandler.cs" />
+    <Compile Include="Kingdoms\AeriaWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AeriaWindow.Designer.cs">
+      <DependentUpon>AeriaWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\AGUR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AGUR.Designer.cs">
+      <DependentUpon>AGUR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\AllArmiesPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AllVassalsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AllVillagesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AssetIcons\Achievements\Achievements.cs" />
+    <Compile Include="Kingdoms\AssetIcons\FreeCards\FreeCards.cs" />
+    <Compile Include="Kingdoms\AssetIcons\MainResources\MainResources.cs" />
+    <Compile Include="Kingdoms\AssetIcons\Monks\Monks.cs" />
+    <Compile Include="Kingdoms\AssetIcons\MRHP\MRHP.cs" />
+    <Compile Include="Kingdoms\AssetIcons\Quests\Quests.cs" />
+    <Compile Include="Kingdoms\AssetIcons\RankAnims\RankAnims.cs" />
+    <Compile Include="Kingdoms\AssetIcons\User\User.cs" />
+    <Compile Include="Kingdoms\AssetIcons\VillageType\VillageType.cs" />
+    <Compile Include="Kingdoms\Assets\SFX\SFX.cs" />
+    <Compile Include="Kingdoms\Assets\uvx.cs" />
+    <Compile Include="Kingdoms\AttackReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AttackReportsResourcesPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AttackReportsResourcesPanel.Designer.cs">
+      <DependentUpon>AttackReportsResourcesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\AttackTargetSidePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AttackTargetsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AttackTargetsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AttackTargetsPopup.Designer.cs">
+      <DependentUpon>AttackTargetsPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\AttackTroopPreviewPanel.cs" />
+    <Compile Include="Kingdoms\Avatar.cs" />
+    <Compile Include="Kingdoms\AvatarEditorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AvatarEditorPanel2.cs" />
+    <Compile Include="Kingdoms\AvatarPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\AvatarPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\Banqueting.cs" />
+    <Compile Include="Kingdoms\BarracksPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BasePreviewPanel.cs" />
+    <Compile Include="Kingdoms\BattleResultPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BattleResultPopup.Designer.cs">
+      <DependentUpon>BattleResultPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\BigPointEventArgs.cs" />
+    <Compile Include="Kingdoms\BigPointEventHandler.cs" />
+    <Compile Include="Kingdoms\BigPointWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BigPointWindow.Designer.cs">
+      <DependentUpon>BigPointWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\BitmapButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BPForgottenPasswordPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BPPopupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BPPopupWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BPPopupWindow.Designer.cs">
+      <DependentUpon>BPPopupWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\BtnState.cs" />
+    <Compile Include="Kingdoms\Building.cs" />
+    <Compile Include="Kingdoms\BuildingMgr.cs" />
+    <Compile Include="Kingdoms\BuyCardsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BuyCrownsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BuyCrownsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BuyCrownsPopup.Designer.cs">
+      <DependentUpon>BuyCrownsPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\BuyVillagePopupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BuyVillagePopupWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\BuyVillagePopupWindow.Designer.cs">
+      <DependentUpon>BuyVillagePopupWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\CapitalBarracksPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CapitalDonateResourcesPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CapitalForumPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CapitalForumPostsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CapitalHelpBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CapitalHelpBox.Designer.cs">
+      <DependentUpon>CapitalHelpBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\CapitalResourcesPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CapitalSendTroopsPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CapitalTradePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CardBarDX.cs" />
+    <Compile Include="Kingdoms\CardBarGDI.cs" />
+    <Compile Include="Kingdoms\CardBarGDIPatch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CardExpiryReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CardPackManager.cs" />
+    <Compile Include="Kingdoms\CardPrizeCell.cs" />
+    <Compile Include="Kingdoms\CardsManager.cs" />
+    <Compile Include="Kingdoms\CastleCameraWinforms.cs" />
+    <Compile Include="Kingdoms\CastleCommitPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CastleCommitPopup.Designer.cs">
+      <DependentUpon>CastleCommitPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\CastleInfoBar2.cs" />
+    <Compile Include="Kingdoms\CastleMap.cs" />
+    <Compile Include="Kingdoms\CastleMapAttackerSetupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CastleMapBattlePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CastleMapPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CastleMapPreset.cs" />
+    <Compile Include="Kingdoms\CastleMapRendering.cs" />
+    <Compile Include="Kingdoms\CastleMouseInputHandler.cs" />
+    <Compile Include="Kingdoms\CastlePreviewPanel.cs" />
+    <Compile Include="Kingdoms\Censor.cs" />
+    <Compile Include="Kingdoms\ChatScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ChatScreenManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ClickLock.cs" />
+    <Compile Include="Kingdoms\ClientFedbackEventHandler.cs" />
+    <Compile Include="Kingdoms\ConfirmBuyOfferPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ConfirmBuyOfferPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ConfirmBuyOfferPopup.Designer.cs">
+      <DependentUpon>ConfirmBuyOfferPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\ConfirmOpenPackPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ConfirmOpenPackPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ConfirmOpenPackPopup.Designer.cs">
+      <DependentUpon>ConfirmOpenPackPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\ConfirmPlayCardPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ConfirmPlayCardPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ConfirmPlayCardPopup.Designer.cs">
+      <DependentUpon>ConfirmPlayCardPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\ConnectionErrorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ConnectionErrorWindow.Designer.cs">
+      <DependentUpon>ConnectionErrorWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\ContestCachedData.cs" />
+    <Compile Include="Kingdoms\ContestHistoryPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ContestPrizeCell.cs" />
+    <Compile Include="Kingdoms\ContestPrizeContentTable.cs" />
+    <Compile Include="Kingdoms\ContestPrizeLine.cs" />
+    <Compile Include="Kingdoms\ContestPrizeList.cs" />
+    <Compile Include="Kingdoms\ContestRankLine.cs" />
+    <Compile Include="Kingdoms\ContestsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CountryCapitalVillagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CountryFrontPagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CountryVotePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CountyCapitalVillagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CountyFrontPagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CountyVotePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CreatePopupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CreatePopupWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CreatePopupWindow.Designer.cs">
+      <DependentUpon>CreatePopupWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\CreateVacationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CreateVacationWindow.Designer.cs">
+      <DependentUpon>CreateVacationWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\CursorManager.cs" />
+    <Compile Include="Kingdoms\CustomPrizeCell.cs" />
+    <Compile Include="Kingdoms\CustomSelfDrawPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CustomTooltip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\CustomTooltip.Designer.cs">
+      <DependentUpon>CustomTooltip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\CustomTooltipManager.cs" />
+    <Compile Include="Kingdoms\CustomTooltipPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\DebugPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\DebugPopup.Designer.cs">
+      <DependentUpon>DebugPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\DefenseTroopPreviewPanel.cs" />
+    <Compile Include="Kingdoms\DisbandTroopsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\DisbandTroopsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\DisbandTroopsPopup.Designer.cs">
+      <DependentUpon>DisbandTroopsPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\DisbandUnitsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\DisbandUnitsPopup.Designer.cs">
+      <DependentUpon>DisbandUnitsPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\DockableControl.cs" />
+    <Compile Include="Kingdoms\DockWindow.cs" />
+    <Compile Include="Kingdoms\DominationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\DominationWindow.Designer.cs">
+      <DependentUpon>DominationWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\DonatePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\DonatePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\DonatePopup.Designer.cs">
+      <DependentUpon>DonatePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\DraftMail.cs" />
+    <Compile Include="Kingdoms\DXPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\EmailOptInPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\EmailOptInPopup.Designer.cs">
+      <DependentUpon>EmailOptInPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\EmptyVillagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\EndofTheWorldPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\EnemyAttackWarningReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\EventEditorMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\EventEditorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ExtendedWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FacebookEventArgs.cs" />
+    <Compile Include="Kingdoms\FacebookEventHandler.cs" />
+    <Compile Include="Kingdoms\FacebookWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FacebookWindow.Designer.cs">
+      <DependentUpon>FacebookWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\FactionAllFactionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionDiplomacyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionInvitePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionManager.cs" />
+    <Compile Include="Kingdoms\FactionMyFactionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionNewForumPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionNewForumPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionNewForumPopup.Designer.cs">
+      <DependentUpon>FactionNewForumPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\FactionNewForumPostsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionNewPostPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionNewPostPopup.Designer.cs">
+      <DependentUpon>FactionNewPostPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\FactionNewTopicPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionNewTopicPopup.Designer.cs">
+      <DependentUpon>FactionNewTopicPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\FactionOfficersPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionStartFactionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FactionTabBar2.cs" />
+    <Compile Include="Kingdoms\FlashWindow.cs" />
+    <Compile Include="Kingdoms\FloatingInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FloatingInput.Designer.cs">
+      <DependentUpon>FloatingInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\FloatingInputText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FloatingInputText.Designer.cs">
+      <DependentUpon>FloatingInputText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\FontManager.cs" />
+    <Compile Include="Kingdoms\FormationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FormationPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FormationPopup.Designer.cs">
+      <DependentUpon>FormationPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\FreeCardsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FreeCardsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\FreeCardsPopup.Designer.cs">
+      <DependentUpon>FreeCardsPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\GameEngine.cs" />
+    <Compile Include="Kingdoms\GameWorld\CameraControllers\VillageCameraWinforms.cs" />
+    <Compile Include="Kingdoms\GenericReportPanelBasic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\GenericReportPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\GFXLibrary.cs" />
+    <Compile Include="Kingdoms\GloryPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\GloryVictoryPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\GloryVictoryPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\GloryVictoryWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\GloryVictoryWindow.Designer.cs">
+      <DependentUpon>GloryVictoryWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\GreyOutPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\GreyOutWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\GreyOutWindow.Designer.cs">
+      <DependentUpon>GreyOutWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\HoldBanquetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\HouseInfoPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\HouseListPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\HouseManager.cs" />
+    <Compile Include="Kingdoms\ICameraController.cs" />
+    <Compile Include="Kingdoms\IDockableControl.cs" />
+    <Compile Include="Kingdoms\IDockWindow.cs" />
+    <Compile Include="Kingdoms\IForumPostParent.cs" />
+    <Compile Include="Kingdoms\IForumReplyParent.cs" />
+    <Compile Include="Kingdoms\IMailUserInterface.cs" />
+    <Compile Include="Kingdoms\InputHandler.cs" />
+    <Compile Include="Kingdoms\InputState.cs" />
+    <Compile Include="Kingdoms\InstallerUpdater.cs" />
+    <Compile Include="Kingdoms\InterfaceMgr.cs" />
+    <Compile Include="Kingdoms\JoiningWorldPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\JoiningWorldPopup.Designer.cs">
+      <DependentUpon>JoiningWorldPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\KingdomsBrowserGecko.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\KingdomsBrowserIE.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\LeaderBoardEntryData.cs" />
+    <Compile Include="Kingdoms\LeaderBoardSearchResults.cs" />
+    <Compile Include="Kingdoms\LeaderBoardSelfRankings.cs" />
+    <Compile Include="Kingdoms\LoadingPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\LoadingPanel.Designer.cs">
+      <DependentUpon>LoadingPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\LoggingOutPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\LoggingOutPopup.Designer.cs">
+      <DependentUpon>LoggingOutPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\LoginHistoryPanelLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\LoginHistoryPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\LoginHistoryPopup.Designer.cs">
+      <DependentUpon>LoginHistoryPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\LogoutOptionsWindow2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\LogoutOptionsWindow2.Designer.cs">
+      <DependentUpon>LogoutOptionsWindow2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\LogoutPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\LostVillagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\LostVillageWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\LostVillageWindow.Designer.cs">
+      <DependentUpon>LostVillageWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\MailAbuseSubmissionForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MailAttachmentPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MailAttachmentPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MailManager.cs" />
+    <Compile Include="Kingdoms\MailScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MailScreenPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MailUserBlockPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MailUserBlockPopup.Designer.cs">
+      <DependentUpon>MailUserBlockPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\MailUserPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MailUserPopup.Designer.cs">
+      <DependentUpon>MailUserPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\MainMenuBar2.cs" />
+    <Compile Include="Kingdoms\MainRightHandPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MainTabBar2.cs" />
+    <Compile Include="Kingdoms\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\MainWindowPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ManageCardsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MapFilterPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MapFilterSelectPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MapIconDrawCall.cs" />
+    <Compile Include="Kingdoms\MarketTransferPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MedalsPopupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MedalsPopupWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MedalsPopupWindow.Designer.cs">
+      <DependentUpon>MedalsPopupWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\MenuBackground.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MenuMailPanel.cs" />
+    <Compile Include="Kingdoms\MenuPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MenuPopup.Designer.cs">
+      <DependentUpon>MenuPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\MFBTitlePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MonksManager.cs" />
+    <Compile Include="Kingdoms\MonkTargetSidePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MouseInputState.cs" />
+    <Compile Include="Kingdoms\MyFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MyFormBase.Designer.cs">
+      <DependentUpon>MyFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\MyMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MyMessageBox.Designer.cs">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\MyMessageBoxPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MyMessageBoxPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\MyMessageBoxPopUp.Designer.cs">
+      <DependentUpon>MyMessageBoxPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\MySettings.cs" />
+    <Compile Include="Kingdoms\NameChangeHistoryPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\NameChangeHistoryPopup.Designer.cs">
+      <DependentUpon>NameChangeHistoryPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\NewAutoSelectVillagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\NewAutoSelectVillageWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\NewAutoSelectVillageWindow.Designer.cs">
+      <DependentUpon>NewAutoSelectVillageWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\NewQuestRewardPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\NewQuestRewardPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\NewQuestRewardPopup.Designer.cs">
+      <DependentUpon>NewQuestRewardPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\NewQuestsCompletedPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\NewQuestsCompletedWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\NewQuestsCompletedWindow.Designer.cs">
+      <DependentUpon>NewQuestsCompletedWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\NewQuestsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\NewSelectVillageAreaPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\NewSelectVillageAreaWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\NewSelectVillageAreaWindow.Designer.cs">
+      <DependentUpon>NewSelectVillageAreaWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\NoDrawPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\OpenCardsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\OptionsPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\OptionsPopup.Designer.cs">
+      <DependentUpon>OptionsPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\OtherVillagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\OwnCountryCapitalPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\OwnCountyCapitalPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\OwnParishCapitalPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\OwnProvinceCapitalPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\OwnVillagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PanelImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ParishCapitalVillagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ParishElectionReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ParishVotePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ParishWallPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PersonInfoPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PizzazzPopupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PizzazzPopupWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PizzazzPopupWindow.Designer.cs">
+      <DependentUpon>PizzazzPopupWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\PlaybackBarDX.cs" />
+    <Compile Include="Kingdoms\PlaybackBarGDI.cs" />
+    <Compile Include="Kingdoms\PlayCardsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PlayCardsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PlayCardsWindow.Designer.cs">
+      <DependentUpon>PlayCardsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\PostTutorialPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PostTutorialWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PostTutorialWindow.Designer.cs">
+      <DependentUpon>PostTutorialWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\PremiumCardsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PremiumOffersPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PremiumTokenManager.cs" />
+    <Compile Include="Kingdoms\PresetEditPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PresetEditPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PresetEditPopup.Designer.cs">
+      <DependentUpon>PresetEditPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\PresetLine.cs" />
+    <Compile Include="Kingdoms\PresetManager.cs" />
+    <Compile Include="Kingdoms\PresetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PresetPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PresetPopup.Designer.cs">
+      <DependentUpon>PresetPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\PresetResult.cs" />
+    <Compile Include="Kingdoms\PresetType.cs" />
+    <Compile Include="Kingdoms\PrizeClaimPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PrizeClaimReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PrizeClaimWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\PrizeClaimWindow.Designer.cs">
+      <DependentUpon>PrizeClaimWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\PrizeWonReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ProfileLoginWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ProfileLoginWindow.Designer.cs">
+      <DependentUpon>ProfileLoginWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\Program.cs" />
+    <Compile Include="Kingdoms\Properties\Resources.cs" />
+    <Compile Include="Kingdoms\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Kingdoms\ProtectionEffects.cs" />
+    <Compile Include="Kingdoms\ProvinceCapitalVillagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ProvinceFrontPagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ProvinceVotePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\QuestReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\QuestRewardPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\QuestRewardPopup.Designer.cs">
+      <DependentUpon>QuestRewardPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\QuestsHelper.cs" />
+    <Compile Include="Kingdoms\QuestsPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\RankFacebookPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\RankFacebookPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\RankFacebookPopup.Designer.cs">
+      <DependentUpon>RankFacebookPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\RankingsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ReasonPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ReasonPopup.Designer.cs">
+      <DependentUpon>ReasonPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\RecipientList.cs" />
+    <Compile Include="Kingdoms\ReinforcementsReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ReinforcementsRetrievalPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ReinforcementsRetrievalPopup.Designer.cs">
+      <DependentUpon>ReinforcementsRetrievalPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\ReinforcementTargetSidePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ReligiousReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\RemoteServices.cs" />
+    <Compile Include="Kingdoms\RenameVillagePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\RenameVillagePopup.Designer.cs">
+      <DependentUpon>RenameVillagePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\ReportBattleValuesPanel.cs" />
+    <Compile Include="Kingdoms\ReportCapturePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ReportCapturePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ReportCapturePopup.Designer.cs">
+      <DependentUpon>ReportCapturePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\ReportDeletePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ReportsManager.cs" />
+    <Compile Include="Kingdoms\ReportsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ReportTabBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ResearchCompleteReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ResearchPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ResourcesPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\Rot13.cs" />
+    <Compile Include="Kingdoms\ScoutPopupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ScoutPopupWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ScoutPopupWindow.Designer.cs">
+      <DependentUpon>ScoutPopupWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\ScoutReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ScoutTargetSidePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SearchForVillagePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SearchForVillagePopup.Designer.cs">
+      <DependentUpon>SearchForVillagePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\SelectArmyPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SelectReinforcementPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SelectTradingResourcePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SelectTradingResourcePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SelectTradingResourcePopup.Designer.cs">
+      <DependentUpon>SelectTradingResourcePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\SendArmyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SendArmyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SendArmyWindow.Designer.cs">
+      <DependentUpon>SendArmyWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\SendMonkPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SendMonkWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SendMonkWindow.Designer.cs">
+      <DependentUpon>SendMonkWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\ServerDowntimePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ServerDowntimePopup.Designer.cs">
+      <DependentUpon>ServerDowntimePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\SharedIPErrorPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SharedIPErrorPopup.Designer.cs">
+      <DependentUpon>SharedIPErrorPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\SHKForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\SHKForm.Designer.cs">
+      <DependentUpon>SHKForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\SHKMutex.cs" />
+    <Compile Include="Kingdoms\SHKMutexObject.cs" />
+    <Compile Include="Kingdoms\Sound.cs" />
+    <Compile Include="Kingdoms\StatsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\StockExchangePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\StockExchangeSidePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\TopLeftMenu2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\TopRightMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\TradeReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\TraderInfoPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\TradeWithPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\TroopRegiment.cs" />
+    <Compile Include="Kingdoms\TutorialArrowPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\TutorialArrowWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\TutorialArrowWindow.Designer.cs">
+      <DependentUpon>TutorialArrowWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\TutorialBattleReportPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\TutorialBattleReportPopup.Designer.cs">
+      <DependentUpon>TutorialBattleReportPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\TutorialManager.cs" />
+    <Compile Include="Kingdoms\TutorialPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\TutorialWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\TutorialWindow.Designer.cs">
+      <DependentUpon>TutorialWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\UICardOffer.cs" />
+    <Compile Include="Kingdoms\UICardPack.cs" />
+    <Compile Include="Kingdoms\UnitsPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\UnknownPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\URLs.cs" />
+    <Compile Include="Kingdoms\UserDiplomacyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\UserInfoPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\UserInfoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\UserInfoScreen2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\UserInfoScreen3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\UserinfoScreenLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VacationCancelPopupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VacationCancelPopupWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VacationCancelPopupWindow.Designer.cs">
+      <DependentUpon>VacationCancelPopupWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\VassalArmiesPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VassalAttackVillagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VassalReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VassalSelectSidePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VassalsManager.cs" />
+    <Compile Include="Kingdoms\VassalVillagePanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VideoWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VideoWindow.Designer.cs">
+      <DependentUpon>VideoWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\ViewAllCardsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ViewMailPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\ViewMailPopup.Designer.cs">
+      <DependentUpon>ViewMailPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\VillageArmiesPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VillageCharterReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VillageClickMask.cs" />
+    <Compile Include="Kingdoms\VillageData.cs" />
+    <Compile Include="Kingdoms\VillageDataExtendedInfo.cs" />
+    <Compile Include="Kingdoms\VillageInfoBar2.cs" />
+    <Compile Include="Kingdoms\VillageInputHandler.cs" />
+    <Compile Include="Kingdoms\VillageLostReportPanelDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VillageMap.cs" />
+    <Compile Include="Kingdoms\VillageMapBuilding.cs" />
+    <Compile Include="Kingdoms\VillageMapBuildingGranaryExtension.cs" />
+    <Compile Include="Kingdoms\VillageMapBuildingInnExtension.cs" />
+    <Compile Include="Kingdoms\VillageMapBuildingStockpileExtension.cs" />
+    <Compile Include="Kingdoms\VillageMapPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VillageMapPerson.cs" />
+    <Compile Include="Kingdoms\VillageReinforcementsPanel2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VillageReportBackgroundPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\VillageTabBar2.cs" />
+    <Compile Include="Kingdoms\VillageVassalsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\WebHelpPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\WebStyleButtonImage.cs" />
+    <Compile Include="Kingdoms\WheelPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\WheelPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\WheelPopup.Designer.cs">
+      <DependentUpon>WheelPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\WheelSelectPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\WheelSelectPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\WheelSelectPopup.Designer.cs">
+      <DependentUpon>WheelSelectPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\WorldListEntry.cs" />
+    <Compile Include="Kingdoms\WorldMap.cs" />
+    <Compile Include="Kingdoms\WorldMapFilter.cs" />
+    <Compile Include="Kingdoms\WorldMapInputHandler.cs" />
+    <Compile Include="Kingdoms\WorldSelectPopupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\WorldSelectPopupWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\WorldSelectPopupWindow.Designer.cs">
+      <DependentUpon>WorldSelectPopupWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kingdoms\WorldsEndPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\WorldsEndWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kingdoms\WorldsEndWindow.Designer.cs">
+      <DependentUpon>WorldsEndWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ReportsEntry.cs" />
+    <Compile Include="UICard.cs" />
+    <Compile Include="UniversalDebugLog.cs" />
+    <Compile Include="Upgrade\Attacker.cs" />
+    <Compile Include="Upgrade\AttackerType.cs" />
+    <Compile Include="Upgrade\CacheSub.cs" />
+    <Compile Include="Upgrade\Command.cs" />
+    <Compile Include="Upgrade\CompareStashByDistance.cs" />
+    <Compile Include="Upgrade\Config.cs" />
+    <Compile Include="Upgrade\ControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upgrade\ControlForm.Designer.cs">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Upgrade\CopySettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upgrade\CopySettings.Designer.cs">
+      <DependentUpon>CopySettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Upgrade\CopySettingsDel.cs" />
+    <Compile Include="Upgrade\DX.cs" />
+    <Compile Include="Upgrade\ExtensionMethods.cs" />
+    <Compile Include="Upgrade\Forms\AdvancedLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upgrade\Forms\AdvancedLogin.Designer.cs">
+      <DependentUpon>AdvancedLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Upgrade\Forms\GetConnectionInfo.cs" />
+    <Compile Include="Upgrade\Forms\GetMAC.cs" />
+    <Compile Include="Upgrade\LeaderBoardShortData.cs" />
+    <Compile Include="Upgrade\LNG.cs" />
+    <Compile Include="Upgrade\Log.cs" />
+    <Compile Include="Upgrade\MailService.cs" />
+    <Compile Include="Upgrade\MonkRouteEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upgrade\MonkRouteEditor.Designer.cs">
+      <DependentUpon>MonkRouteEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Upgrade\RadarPopupMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upgrade\RadarPopupMessage.Designer.cs">
+      <DependentUpon>RadarPopupMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Upgrade\RouteEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upgrade\RouteEditor.Designer.cs">
+      <DependentUpon>RouteEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Upgrade\Services\ABaseService.cs" />
+    <Compile Include="Upgrade\Services\ASubscribed.cs" />
+    <Compile Include="Upgrade\Services\AutoUpdates.cs" />
+    <Compile Include="Upgrade\Services\BanquetService.cs" />
+    <Compile Include="Upgrade\Services\CardExpiryChecker.cs" />
+    <Compile Include="Upgrade\Services\CastleRepairService.cs" />
+    <Compile Include="Upgrade\Services\CloseAllMessages.cs" />
+    <Compile Include="Upgrade\Services\DownloadVillagesService.cs" />
+    <Compile Include="Upgrade\Services\FeedService.cs" />
+    <Compile Include="Upgrade\Services\FiltersService.cs" />
+    <Compile Include="Upgrade\Services\FreeCardCollector.cs" />
+    <Compile Include="Upgrade\Services\FreeMonitorService.cs" />
+    <Compile Include="Upgrade\Services\Hunter.cs" />
+    <Compile Include="Upgrade\Services\MakeMonksDelegate.cs" />
+    <Compile Include="Upgrade\Services\MonitorService.cs" />
+    <Compile Include="Upgrade\Services\MonkRoute.cs" />
+    <Compile Include="Upgrade\Services\MonkService.cs" />
+    <Compile Include="Upgrade\Services\PopularityRegulationService.cs" />
+    <Compile Include="Upgrade\Services\PredatorPrey.cs" />
+    <Compile Include="Upgrade\Services\PredatorPreySettings.cs" />
+    <Compile Include="Upgrade\Services\PredatorService.cs" />
+    <Compile Include="Upgrade\Services\RadarGrid.cs" />
+    <Compile Include="Upgrade\Services\RadarService.cs" />
+    <Compile Include="Upgrade\Services\RadarSetting.cs" />
+    <Compile Include="Upgrade\Services\ReportedArmy.cs" />
+    <Compile Include="Upgrade\Services\ResearchService.cs" />
+    <Compile Include="Upgrade\Services\SaveMonkRouteDel.cs" />
+    <Compile Include="Upgrade\Services\SaveTradeRouteDel2.cs" />
+    <Compile Include="Upgrade\Services\ScoutingService.cs" />
+    <Compile Include="Upgrade\Services\SpinService.cs" />
+    <Compile Include="Upgrade\Services\TimedAttacksService.cs" />
+    <Compile Include="Upgrade\Services\TradeRoute.cs" />
+    <Compile Include="Upgrade\Services\TradeService.cs" />
+    <Compile Include="Upgrade\Services\TroopsrecruitingService.cs" />
+    <Compile Include="Upgrade\Services\VassalsOverview.cs" />
+    <Compile Include="Upgrade\Services\VillagelayoutService.cs" />
+    <Compile Include="Upgrade\Services\WorkCycle.cs" />
+    <Compile Include="Upgrade\SettingsManager.cs" />
+    <Compile Include="Upgrade\StashDistance.cs" />
+    <Compile Include="Upgrade\TabHost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upgrade\TabHost.Designer.cs">
+      <DependentUpon>TabHost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Upgrade\TradeType.cs" />
+    <Compile Include="Upgrade\VillageTradeInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Kingdoms\AGUR.resources" />
+    <EmbeddedResource Include="Kingdoms\LoadingPanel.resx">
+      <DependentUpon>LoadingPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kingdoms\MainWindow.resources" />
+    <EmbeddedResource Include="Kingdoms\ProfileLoginWindow.resources" />
+    <EmbeddedResource Include="Kingdoms\Properties\Resources.resources" />
+    <EmbeddedResource Include="Kingdoms\TopLeftMenu2.resources" />
+    <EmbeddedResource Include="Kingdoms\WorldSelectPopupWindow.resources" />
+    <EmbeddedResource Include="Properties\Resources.resources" />
+    <EmbeddedResource Include="Upgrade\AlertsService.resources" />
+    <EmbeddedResource Include="Upgrade\CopySettings.resources" />
+    <EmbeddedResource Include="Upgrade\Forms\AdvancedLogin.resources" />
+    <EmbeddedResource Include="Upgrade\Forms\ControlForm.resources" />
+    <EmbeddedResource Include="Upgrade\MonkRouteEditor.resources" />
+    <EmbeddedResource Include="Upgrade\RadarPopupMessage.resources" />
+    <EmbeddedResource Include="Upgrade\RouteEditor.resources" />
+    <EmbeddedResource Include="Upgrade\TabHost.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Kingdoms\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

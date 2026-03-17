@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<methodResponse>
+    <fault>
+        <value>
+            <struct>
+                <member>
+                    <name>faultCode</name>
+                    <value><int>-32601</int></value>
+                </member>
+                <member>
+                    <name>faultString</name>
+                    <value><string>server error. requested method "GetWorlds" not specified.</string></value>
+                </member>
+            </struct>
+        </value>
+    </fault>
+</methodResponse>

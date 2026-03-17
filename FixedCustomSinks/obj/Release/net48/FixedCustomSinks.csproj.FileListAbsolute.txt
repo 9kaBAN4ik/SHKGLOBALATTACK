@@ -1,0 +1,9 @@
+C:\GlobalAttackSHK\FixedCustomSinks\obj\Release\net48\FixedCustomSinks.csproj.AssemblyReference.cache
+C:\GlobalAttackSHK\FixedCustomSinks\obj\Release\net48\FixedCustomSinks.GeneratedMSBuildEditorConfig.editorconfig
+C:\GlobalAttackSHK\FixedCustomSinks\obj\Release\net48\FixedCustomSinks.AssemblyInfoInputs.cache
+C:\GlobalAttackSHK\FixedCustomSinks\obj\Release\net48\FixedCustomSinks.AssemblyInfo.cs
+C:\GlobalAttackSHK\FixedCustomSinks\obj\Release\net48\FixedCustomSinks.csproj.CoreCompileInputs.cache
+C:\GlobalAttackSHK\FixedCustomSinks\bin\Release\net48\CustomSinks.dll
+C:\GlobalAttackSHK\FixedCustomSinks\bin\Release\net48\CustomSinks.pdb
+C:\GlobalAttackSHK\FixedCustomSinks\obj\Release\net48\CustomSinks.dll
+C:\GlobalAttackSHK\FixedCustomSinks\obj\Release\net48\CustomSinks.pdb

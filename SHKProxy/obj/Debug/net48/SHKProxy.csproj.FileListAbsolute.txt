@@ -1,0 +1,7 @@
+C:\GlobalAttackSHK\SHKProxy\obj\Debug\net48\SHKProxy.csproj.AssemblyReference.cache
+C:\GlobalAttackSHK\SHKProxy\obj\Debug\net48\SHKProxy.csproj.SuggestedBindingRedirects.cache
+C:\GlobalAttackSHK\SHKProxy\obj\Debug\net48\SHKProxy.exe.config
+C:\GlobalAttackSHK\SHKProxy\obj\Debug\net48\SHKProxy.GeneratedMSBuildEditorConfig.editorconfig
+C:\GlobalAttackSHK\SHKProxy\obj\Debug\net48\SHKProxy.AssemblyInfoInputs.cache
+C:\GlobalAttackSHK\SHKProxy\obj\Debug\net48\SHKProxy.AssemblyInfo.cs
+C:\GlobalAttackSHK\SHKProxy\obj\Debug\net48\SHKProxy.csproj.CoreCompileInputs.cache
