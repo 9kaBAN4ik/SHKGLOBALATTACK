@@ -1,0 +1,92 @@
+# Clacky configuration
+.clackyai/
+.environments.yaml
+.1024
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv/
+env/
+ENV/
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# C# / .NET
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.user
+*.suo
+*.cache
+
+# Game data
+chrome-user-data/
+node-compile-cache/
+xdg/
+overlay/
+dbus-session
+.X11-unix/
+.X*-lock
+.Xauth
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Analysis files
+analysis/*.pcapng
+analysis/*.bin
+analysis/*.txt
+analysis/context_*.bin
+analysis/extracted_*.bin
+analysis/http_*.bin
+analysis/post_*.txt
+
+# Temporary directories
+01e0225fae9d25ed4d5951358181f9fc/
+e542911189034e8e2f0298f6b15c00ae/
+.org.chromium.Chromium.*/

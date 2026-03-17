@@ -206,95 +206,188 @@ async def remove_attack(ctx, attack_id: int):
         await ctx.send(f"❌ Атака #{attack_id} не найдена")
 
 @bot.command(name='time')
-async def calculate_attack_time(ctx, *, command_text: str):
+async def calculate_time(ctx, subcommand: str = None, *, params: str = None):
     """
     Рассчитать время атак
-    Пример: !time capx4 6515[1];74000[2];71593[3];93485[5];45594[4] 90618
+    Использование: 
+    - /time attack fromids: 16107;74469 targetid: 83239
+    - /time all fromids: 16107;74469 targetid: 83239  (с автоматическим получением координат)
     """
+    if subcommand not in ['attack', 'all']:
+        await ctx.send("❌ Используйте: `/time attack fromids: <id1;id2;...> targetid: <target_id>` или `/time all fromids: <id1;id2;...> targetid: <target_id>`")
+        return
+    
+    if not params:
+        await ctx.send("❌ Укажите параметры: `fromids: <id1;id2;...> targetid: <target_id>`")
+        return
+    
     try:
-        # Парсим команду
-        attack_type, attacking_villages, target_village = calculator.parse_attack_command(command_text)
+        # Парсим параметры: fromids: 16107;74469 targetid: 83239
+        parts = params.split()
+        fromids_str = None
+        targetid = None
         
-        if not attacking_villages:
-            await ctx.send("❌ Неверный формат команды!\nПример: `!time capx4 6515[1];74000[2] 90618`")
+        i = 0
+        while i < len(parts):
+            if parts[i].lower() == 'fromids:':
+                if i + 1 < len(parts):
+                    fromids_str = parts[i + 1]
+                i += 2
+            elif parts[i].lower() == 'targetid:':
+                if i + 1 < len(parts):
+                    targetid = int(parts[i + 1])
+                i += 2
+            else:
+                i += 1
+        
+        if not fromids_str or not targetid:
+            await ctx.send("❌ Неверный формат! Используйте: `/time attack fromids: 16107;74469 targetid: 83239`")
             return
         
-        # Получаем ID деревень
-        attacking_ids = [v['village_id'] for v in attacking_villages]
+        # Парсим fromids
+        attacking_ids = [int(vid.strip()) for vid in fromids_str.split(';')]
         
-        # Запрос к прокси-серверу
+        # Запрос к прокси-серверу для получения координат и расчета
         try:
             import requests
-            response = requests.post(
-                'http://localhost:5000/api/calculate-attacks',
-                json={
-                    'targetVillageId': target_village,
-                    'attackingVillageIds': attacking_ids
-                },
-                timeout=5
+            
+            # Если subcommand == 'all', пытаемся автоматически получить координаты
+            if subcommand == 'all':
+                # Отправляем сообщение о загрузке
+                loading_msg = await ctx.send("📡 Получение координат деревень с игрового сервера...")
+                
+                # Сначала пытаемся использовать auto-calculate-attacks endpoint
+                # который автоматически попытается получить недостающие координаты
+                response = requests.post(
+                    'http://localhost:5000/api/auto-calculate-attacks',
+                    json={
+                        'targetVillageId': targetid,
+                        'attackingVillageIds': attacking_ids
+                    },
+                    timeout=30  # Увеличенный timeout для запроса к игровому серверу
+                )
+                
+                await loading_msg.delete()
+                
+                if response.status_code == 404:
+                    # Деревни не найдены в кэше
+                    error_data = response.json()
+                    missing = error_data.get('missing_villages', [])
+                    await ctx.send(
+                        f"❌ Не удалось получить координаты деревень: {', '.join(map(str, missing))}\n"
+                        f"⚠️ Возможно, эти деревни не принадлежат вашему аккаунту или не существуют на сервере.\n"
+                        f"Вы можете добавить координаты вручную: `!coords <village_id> <x> <y> <название>`"
+                    )
+                    return
+            else:
+                # Обычный режим - используем кэш
+                response = requests.post(
+                    'http://localhost:5000/api/calculate-attacks',
+                    json={
+                        'targetVillageId': targetid,
+                        'attackingVillageIds': attacking_ids
+                    },
+                    timeout=10
+                )
+            
+            if response.status_code != 200:
+                await ctx.send(f"❌ Ошибка: прокси-сервер вернул статус {response.status_code}")
+                return
+            
+            data = response.json()
+            attacks_data = data.get('attacks', [])
+            
+            # Проверяем наличие ошибок
+            missing_villages = []
+            for attack in attacks_data:
+                if 'error' in attack:
+                    missing_villages.append(attack['village_id'])
+            
+            if missing_villages:
+                if subcommand == 'all':
+                    await ctx.send(
+                        f"❌ Не удалось получить координаты деревень: {', '.join(map(str, missing_villages))}\n"
+                        f"⚠️ Возможно, эти деревни не принадлежат вашему аккаунту или не существуют на сервере.\n"
+                        f"Вы можете добавить координаты вручную: `!coords <village_id> <x> <y> <название>`"
+                    )
+                else:
+                    await ctx.send(
+                        f"❌ Деревни не найдены в кэше: {', '.join(map(str, missing_villages))}\n"
+                        f"Используйте `/time all` для автоматического получения координат с сервера\n"
+                        f"Или добавьте координаты вручную: `!coords <village_id> <x> <y> <название>`"
+                    )
+                return
+            
+            # Создаем таблицу с временем атак для разных множителей
+            # Множители скорости: x1, x2, x3, x4, x5, x6
+            multipliers = [1, 2, 3, 4, 5, 6]
+            
+            # Создаем embed с результатами
+            embed = discord.Embed(
+                title="⚔️ Расчет времени атак",
+                description=f"**Цель:** Деревня #{targetid}",
+                color=discord.Color.blue()
             )
             
-            if response.status_code == 200:
-                data = response.json()
-                attacks_data = data['attacks']
+            # Форматируем таблицу
+            table = "```\n"
+            table += "+------------+-----------+-----------+-----------+-----------+-----------+-----------+\n"
+            table += "| Village_id | Attack x1 | Attack x2 | Attack x3 | Attack x4 | Attack x5 | Attack x6 |\n"
+            table += "+------------+-----------+-----------+-----------+-----------+-----------+-----------+\n"
+            
+            for attack in attacks_data:
+                if 'error' not in attack:
+                    village_id = attack['village_id']
+                    distance = attack['distance']
+                    
+                    # Рассчитываем время для каждого множителя
+                    times = []
+                    for mult in multipliers:
+                        # Скорость капитана = 15 клеток/час
+                        speed = 15 * mult
+                        hours = distance / speed
+                        
+                        h = int(hours)
+                        m = int((hours - h) * 60)
+                        s = int(((hours - h) * 60 - m) * 60)
+                        
+                        if h > 0:
+                            time_str = f"{h}h:{m}m:{s}s"
+                        else:
+                            time_str = f"{m}m:{s}s"
+                        
+                        times.append(time_str)
+                    
+                    # Форматируем строку таблицы
+                    table += f"|   {village_id:<8} | {times[0]:>9} | {times[1]:>9} | {times[2]:>9} | {times[3]:>9} | {times[4]:>9} | {times[5]:>9} |\n"
+            
+            table += "+------------+-----------+-----------+-----------+-----------+-----------+-----------+\n"
+            table += "```"
+            
+            embed.add_field(name="Время атак с разными множителями скорости", value=table, inline=False)
+            
+            if subcommand == 'all':
+                embed.set_footer(text="✅ Координаты получены с игрового сервера | Скорость капитана: 15 tiles/hour")
             else:
-                # Если прокси не работает, используем локальный расчет
-                attacks_data = []
-                for village in attacking_villages:
-                    village_id = village['village_id']
-                    if village_id in village_coords and target_village in village_coords:
-                        v1 = village_coords[village_id]
-                        v2 = village_coords[target_village]
-                        distance = calculator.calculate_distance(v1['x'], v1['y'], v2['x'], v2['y'])
-                        travel_time = calculator.calculate_travel_time(distance, 'captain')
-                        attacks_data.append({
-                            'village_id': village_id,
-                            'distance': round(distance, 2),
-                            'travel_time': calculator.format_time(travel_time)
-                        })
-                    else:
-                        attacks_data.append({
-                            'village_id': village_id,
-                            'error': 'Coordinates not found'
-                        })
+                embed.set_footer(text="✅ Данные получены из кэша | Скорость капитана: 15 tiles/hour")
+            
+            await ctx.send(embed=embed)
+            
+        except requests.exceptions.ConnectionError:
+            await ctx.send(
+                "❌ Не удалось подключиться к прокси-серверу!\n"
+                "Убедитесь, что прокси запущен: `python proxy_server.py`"
+            )
+        except requests.exceptions.Timeout:
+            await ctx.send(
+                "❌ Превышено время ожидания ответа от игрового сервера!\n"
+                "Попробуйте еще раз или используйте `/time attack` с ручным добавлением координат."
+            )
         except Exception as e:
-            await ctx.send(f"❌ Ошибка подключения к прокси-серверу: {e}\nИспользуй `!coords` для добавления координат")
-            return
-        
-        # Создаем embed с результатами
-        embed = discord.Embed(
-            title=f"⚔️ Расчет времени атак",
-            description=f"**Цель:** Деревня #{target_village}\n**Тип:** {attack_type}",
-            color=discord.Color.blue()
-        )
-        
-        # Таблица результатов
-        table = "```\n"
-        table += "+-------------+------------+\n"
-        table += "| Village_id  | Time       |\n"
-        table += "+-------------+------------+\n"
-        
-        for i, village in enumerate(attacking_villages):
-            village_id = village['village_id']
-            count = village['count']
+            await ctx.send(f"❌ Ошибка при запросе к прокси: {str(e)}")
             
-            attack_data = attacks_data[i] if i < len(attacks_data) else {}
-            
-            if 'error' in attack_data:
-                time_str = "NOT FOUND"
-            else:
-                time_str = attack_data.get('travel_time', 'ERROR')
-            
-            table += f"| {village_id:>6}[{count}]  | {time_str:>10} |\n"
-        
-        table += "+-------------+------------+\n"
-        table += "```"
-        
-        embed.add_field(name="Время прибытия", value=table, inline=False)
-        embed.set_footer(text="✅ Данные получены с прокси-сервера")
-        
-        await ctx.send(embed=embed)
-        
+    except ValueError as e:
+        await ctx.send(f"❌ Ошибка парсинга: {str(e)}")
     except Exception as e:
         await ctx.send(f"❌ Ошибка: {str(e)}")
 
