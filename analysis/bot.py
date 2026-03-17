@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands, tasks
 import os
+import json
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 import asyncio
@@ -445,6 +446,107 @@ async def add_multiple_villages(ctx):
             pass
     
     await ctx.send(f"✅ Добавлено {added} тестовых деревень")
+
+@bot.command(name='loadvillages')
+async def load_villages_from_file(ctx):
+    """
+    Загрузить координаты деревень из файла villages.json
+    Файл должен быть в формате:
+    [
+      {"id": 12345, "x": 100, "y": 200, "name": "Village Name"},
+      ...
+    ]
+    """
+    try:
+        # Пробуем загрузить из текущей директории
+        json_path = 'villages.json'
+        if not os.path.exists(json_path):
+            # Пробуем из корня проекта
+            json_path = '../villages.json'
+        
+        if not os.path.exists(json_path):
+            await ctx.send(
+                "❌ Файл villages.json не найден!\n\n"
+                "**Как создать файл:**\n"
+                "1. На Windows компьютере запустите: `export_villages.ps1`\n"
+                "2. Программа подключится к игре и экспортирует все деревни\n"
+                "3. Скопируйте созданный файл `villages.json` на сервер\n"
+                "4. Положите его в папку с ботом\n"
+                "5. Запустите команду !loadvillages снова"
+            )
+            return
+        
+        loading_msg = await ctx.send("📂 Загрузка данных из villages.json...")
+        
+        # Читаем JSON
+        with open(json_path, 'r', encoding='utf-8') as f:
+            villages_data = json.load(f)
+        
+        if not isinstance(villages_data, list):
+            await loading_msg.edit(content="❌ Неверный формат файла! Ожидается массив JSON.")
+            return
+        
+        # Загружаем в бота и прокси
+        loaded_count = 0
+        proxy_count = 0
+        
+        import requests
+        
+        for village in villages_data:
+            try:
+                vid = int(village.get('id', 0))
+                x = int(village.get('x', 0))
+                y = int(village.get('y', 0))
+                name = village.get('name', f'Village {vid}')
+                
+                if vid > 0:
+                    # Добавляем локально
+                    village_coords[vid] = {'x': x, 'y': y}
+                    loaded_count += 1
+                    
+                    # Отправляем в прокси
+                    try:
+                        response = requests.post(
+                            'http://localhost:5000/api/village',
+                            json={'id': vid, 'x': x, 'y': y, 'name': name},
+                            timeout=1
+                        )
+                        if response.status_code == 200:
+                            proxy_count += 1
+                    except:
+                        pass  # Прокси может быть недоступен
+            except:
+                pass  # Игнорируем ошибки для отдельных деревень
+        
+        # Формируем отчет
+        embed = discord.Embed(
+            title="✅ Координаты деревень загружены!",
+            color=discord.Color.green()
+        )
+        embed.add_field(name="Загружено в бота", value=f"{loaded_count} деревень", inline=True)
+        embed.add_field(name="Отправлено в прокси", value=f"{proxy_count} деревень", inline=True)
+        embed.add_field(
+            name="Что дальше?",
+            value="Теперь используйте команду:\n`!time all fromids: <id1;id2> targetid: <target_id>`",
+            inline=False
+        )
+        
+        await loading_msg.delete()
+        await ctx.send(embed=embed)
+        
+        # Показываем примеры деревень
+        if loaded_count > 0:
+            sample_villages = list(village_coords.items())[:5]
+            sample_text = "**Примеры загруженных деревень:**\n```\n"
+            for vid, coords in sample_villages:
+                sample_text += f"ID: {vid}, X: {coords['x']}, Y: {coords['y']}\n"
+            sample_text += "```"
+            await ctx.send(sample_text)
+    
+    except json.JSONDecodeError:
+        await ctx.send("❌ Ошибка парсинга JSON! Проверьте формат файла villages.json")
+    except Exception as e:
+        await ctx.send(f"❌ Ошибка загрузки: {str(e)}")
 
 @tasks.loop(seconds=30)
 async def check_attacks():

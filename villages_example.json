@@ -1,0 +1,32 @@
+[
+  {
+    "id": 16107,
+    "x": 423,
+    "y": 582,
+    "name": "Castle"
+  },
+  {
+    "id": 74469,
+    "x": 456,
+    "y": 601,
+    "name": "Farm Village 1"
+  },
+  {
+    "id": 83239,
+    "x": 489,
+    "y": 573,
+    "name": "Farm Village 2"
+  },
+  {
+    "id": 12345,
+    "x": 400,
+    "y": 550,
+    "name": "Test Village 1"
+  },
+  {
+    "id": 67890,
+    "x": 450,
+    "y": 600,
+    "name": "Test Village 2"
+  }
+]
