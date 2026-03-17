@@ -275,7 +275,18 @@ namespace GameServerClient
             Console.WriteLine("============================================");
             Console.WriteLine();
             
-            // Загрузка .env
+            // Загрузка .env файла
+            try
+            {
+                DotNetEnv.Env.Load();
+                Console.WriteLine("✅ .env файл загружен");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"⚠️ Предупреждение при загрузке .env: {ex.Message}");
+            }
+            
+            // Загрузка переменных окружения
             var email = Environment.GetEnvironmentVariable("GAME_EMAIL");
             var password = Environment.GetEnvironmentVariable("GAME_PASSWORD");
             
@@ -285,9 +296,17 @@ namespace GameServerClient
                 Console.WriteLine("Пожалуйста, убедитесь что файл .env содержит:");
                 Console.WriteLine("  GAME_EMAIL=your_email@example.com");
                 Console.WriteLine("  GAME_PASSWORD=your_password");
+                Console.WriteLine();
+                Console.WriteLine($"Текущие значения:");
+                Console.WriteLine($"  GAME_EMAIL: {(string.IsNullOrEmpty(email) ? "<не найдено>" : "<найдено>")}");
+                Console.WriteLine($"  GAME_PASSWORD: {(string.IsNullOrEmpty(password) ? "<не найдено>" : "<найдено>")}");
                 Console.ReadKey();
                 return;
             }
+            
+            Console.WriteLine($"✅ Email: {email}");
+            Console.WriteLine($"✅ Password: {new string('*', password.Length)}");
+            Console.WriteLine();
             
             var client = new GameClient(email, password);
             
